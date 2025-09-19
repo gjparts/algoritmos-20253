@@ -74,6 +74,10 @@ int main(){
 		cout << arreglo2[i] << endl;
 	}
 	
+	//el resultado de restar end-begin se puede almacenar en una variable int o long
+	int x = end(arreglo2)-begin(arreglo2);
+	cout << "Tamanio del arreglo2: " << x << endl;
+	
 	return 777;
 }
 
