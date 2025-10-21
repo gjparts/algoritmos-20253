@@ -34,6 +34,56 @@ double hipotenusa(double a, double b){
 	return sqrt(pow(a,2)+pow(b,2));
 }
 
+/*3. Escriba una funcion que reciba dos numeros enteros. Esta funcion va
+a retornar true si el primero numero es multiplo del segundo numero, se retorna
+false en caso contrario.*/
+bool multiplo(int a, int b){
+	//forma 1: programa estructurado clasico
+	/*if( a%b == 0 )
+		return true;
+	else
+		return false;*/
+	
+	//forma 2: usando operador ternario
+	//return ( a%b == 0 ?  true : false );
+	
+	//forma 3: retornar el booleano de la expresion
+	return ( a%b == 0 );
+}
+
+/*4. Escriba una funcion que imprima un rectangulo relleno de caracteres.
+Dicha funcion recibira como parametros: ancho y largo del rectangulo
+Tambien recibira como tercer parametro el caracter usado para dibujarlo.*/
+
+//cuando se les pida una funcion que no retorna valor sino que solo hace un trabajo
+//como en este caso imprimir; entonces se recomienda usar el tipo void
+//las funciones void no estan obligadas a hacer return.
+void imprimirRectangulo(int ancho, int largo, char caracter){
+	for( int i = 1; i <= largo; i++ ){
+		for( int j = 1; j <= ancho; j++ ){
+			cout << caracter;
+		}
+		cout << endl; //nuevo renglon
+	}
+}
+
+/*5. Haga una funcion que retorne el area de un circulo,
+dicha funcion va a recibir el radio del mismo.
+-> Usando sobrecarga de funciones haga que dicha funcion
+   pueda trabajar con numeros float o con numeros double.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

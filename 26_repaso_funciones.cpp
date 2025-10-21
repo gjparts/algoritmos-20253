@@ -18,5 +18,52 @@ int main(){
 	cout << hipotenusa(7,1) << endl;
 	cout << hipotenusa(1,1) << endl;
 	
+	cout << multiplo(5,2) << endl;
+	cout << multiplo(8,2) << endl;
+	cout << multiplo(10,5) << endl;
+	cout << multiplo(11,3) << endl;
+	
+	//en todos los lenguajes de programacion modernos si Usted
+	//imprime el resultado de una expresion de comparacion; entonces
+	//obtendra true o false dependiendo de si esta se cumple.
+	cout << ( 5 > 4 ) << endl; //imprime 1 porque 5 > 4 es true
+	cout << ( 10 == 10 ) << endl; //imprime 1 o true
+	cout << ( 4 != 8 ) << endl; //imprime 1 o true
+	cout << ( 3 == 7 ) << endl; //imprime 0 o false
+	
+	//los booleanos se pueden sumar en C++
+	int suma = 0;
+	suma = suma + ( 6 > 3 ); //la condicion se cumple, suma 1
+	cout << "suma: " << suma << endl;
+	suma = suma + ( 11 == 11 ); //la condicion se cumple, suma 1
+	cout << "suma: " << suma << endl;
+	suma = suma + ( 4 == 5 ); //condicion no se cumple, suma 0
+	cout << "suma: " << suma << endl;
+	suma = suma + ( 7 > 2 && 6 < 12 ); //se cumplen, suma 1
+	cout << "suma: " << suma << endl;
+	
+	int x = 10, y = 11;
+	suma = suma + ( y > x );
+	cout << "suma: " << suma << endl;
+	
+	//las funciones void como no retornan valor entonces no se pueden
+	//combinar con cout y tampoco se pueden asignar a variables.
+	//ya que void significa vacio.
+	//por tal razon lo siguiente da error:
+	//cout << imprimirRectangulo(20,7,'x') << endl;
+	//tampoco puede hacer esto:
+	//string cuadrado = imprimirRectangulo(20,7,'x');
+	
+	//una funcion void solo se manda a ejecutar como si fuera un subprograma:
+	imprimirRectangulo(20,7,'x');
+	imprimirRectangulo(4,9,'R');
+	
+	
+	
 	return 777;
 }
+
+
+
+
+
