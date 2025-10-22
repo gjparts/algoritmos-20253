@@ -58,7 +58,21 @@ int main(){
 	imprimirRectangulo(20,7,'x');
 	imprimirRectangulo(4,9,'R');
 	
+	/*C++ detecta o infiere el tipo de dato de un numero dependiendo si este
+	lleva decimales o no, si el numero no lleva decimales se considera int,
+	si el numero lleva decimales se considera double y si el numero lleva una f
+	al final se considera float*/
+	cout << areaCirculo(4.0) << endl; //usa la funcion para doubles
+	cout << areaCirculo(3.0f) << endl; //usa la funcion para floats
 	
+	//lo anterior no aplica si Usted alimenta el valor desde una variable
+	//que tiene el tipo pre-definido desde antes
+	double n = 6;
+	cout << areaCirculo(n) << endl;
+	
+	cout << minimo(5,6,7) << endl;
+	cout << minimo(3.4,4.5,2.45324) << endl;
+	cout << minimo(4.5f,7.0f,9.0f) << endl;
 	
 	return 777;
 }

@@ -1,6 +1,7 @@
 //Archivo externo de funciones
 #include<iostream>
 #include<stdexcept>
+#define _USE_MATH_DEFINES //colocar esto antes del include de cmath para tener acceso a constantes como PI
 #include<cmath>
 using namespace std;
 
@@ -71,13 +72,40 @@ void imprimirRectangulo(int ancho, int largo, char caracter){
 dicha funcion va a recibir el radio del mismo.
 -> Usando sobrecarga de funciones haga que dicha funcion
    pueda trabajar con numeros float o con numeros double.*/
+float areaCirculo(float radio){
+	return M_PI*pow(radio,2);
+}
+double areaCirculo(double radio){
+	return M_PI*pow(radio,2);
+}
 
+/*6. Escriba una funcion llamada minimo que devuelva el menor
+de tres numeros. Dicha funcion debera poder trabajar con tres numeros enteros
+o con tres numeros float o con tres numeros double.*/
 
+/*Cuando nos encontramos con sobrecarga de funciones y notamos que estamos
+repitiendo el mismo codigo muchas veces, lo mas recomendado es optimizar
+esto por medio de reutilizacion de las funciones sobrecargadas.
+Para ello van a colocar el codgo original en la funcion cuyo tipo de dato
+sea el de mayor precision y las funciones cuyo tipo sea de menor precision
+van a consumir a la de mayor precision.*/
 
-
-
-
-
+//primero: la logica va en la funcion de mayor precision en este caso double
+double minimo(double a, double b, double c){
+	if( a <= b && a <= c ) return a;
+	if( b <= a && b <= c ) return b;
+	if( c <= a && c <= b ) return c;
+}
+//segundo: las funciones de menor precision reutilizaran a la de mayor precision
+//por medio de la conversion de tipos
+int minimo(int a, int b, int c){
+	double x = a, y = b, z = c; //note que convertimos a double los valores int
+	return minimo(x,y,z); //para que el minimo a llamar sea el de doubles (mayor precision)
+}
+float minimo(float a, float b, float c){
+	double x = a, y = b, z = c;
+	return minimo(x,y,z);
+}
 
 
 
