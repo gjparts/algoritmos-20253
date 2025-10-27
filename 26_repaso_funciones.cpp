@@ -74,6 +74,25 @@ int main(){
 	cout << minimo(3.4,4.5,2.45324) << endl;
 	cout << minimo(4.5f,7.0f,9.0f) << endl;
 	
+	cout << enMayusculas("gato") << endl;
+	cout << enMayusculas("Gat") << endl;
+	cout << enMayusculas("GATO") << endl;
+	
+	cout << encontrarCaracter("Gerardo",'o') << endl;
+	cout << encontrarCaracter("Gerardo",'r') << endl;
+	cout << encontrarCaracter("Gerardo",'R') << endl;
+	cout << encontrarCaracter("Gerardo",'z') << endl;
+	
+	string colores[] = {"Rojo","Verde","Azul","Rosa","Gris","Blanco"};
+	int longitud = end(colores)-begin(colores);
+	
+	cout << buscarEnArreglo("Gris",colores,longitud) << endl;
+	cout << buscarEnArreglo("rojo",colores,longitud) << endl;
+	cout << buscarEnArreglo("Rojo",colores,longitud) << endl;
+	cout << buscarEnArreglo("Blanco",colores,longitud) << endl;
+	cout << buscarEnArreglo("Azul",colores,longitud) << endl;
+	cout << buscarEnArreglo("ROSA",colores,longitud) << endl;
+	
 	return 777;
 }
 

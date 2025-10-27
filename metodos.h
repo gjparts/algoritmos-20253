@@ -3,6 +3,7 @@
 #include<stdexcept>
 #define _USE_MATH_DEFINES //colocar esto antes del include de cmath para tener acceso a constantes como PI
 #include<cmath>
+#include<algorithm>
 using namespace std;
 
 /*1. Escriba una funcion llamada elevar que reciba
@@ -105,6 +106,47 @@ int minimo(int a, int b, int c){
 float minimo(float a, float b, float c){
 	double x = a, y = b, z = c;
 	return minimo(x,y,z);
+}
+
+/*7. Escriba una funcion que devuelva true si un string esta escrito todo en mayusculas de lo contrario
+que devuelva false.*/
+bool enMayusculas(string str){
+	string copia = str;
+	transform(copia.begin(),copia.end(),copia.begin(),::toupper);
+	if( str == copia )
+		return true;
+	else
+		return false;
+}
+
+/*8. Escriba una funcion a la cual se le proporcione como parametros un string y un caracter
+dicha funcion va a devolder un numero entero con la posicion de la primer coincidencia en
+la que fue encontraro el caracter dado dentro del string proporcionado.
+Si el caracter no fue encontrado; entonces devuelva -1.
+No tiene permitido usar la funcion find() del string.*/
+int encontrarCaracter(string str, char buscar){
+	for( int i = 0; i < str.length(); i++){
+		if( str[i] == buscar )
+			return i;	//return termina con la funcion y retorna el valor de i
+	}
+	//si llego hasta aqui, quiere decir que no se encontró el caracter:
+	return -1;
+}
+
+/*9. Escriba una funcion que reciba como parametros un string y un arreglo de string,
+dicha funcion debera buscar el string proporcionado dentro del arreglo de string.
+Si es encontrado entonces retornara un numero entero con la posicion de la primera coincidencia
+donde se encontro, en caso de no encontrarlo entonces se retornará -1.*/
+int buscarEnArreglo(string buscar, string arreglo[], int tamanio){
+	//como no hemos visto arreglos; entonces no podemos medir el arreglo con end-begin
+	//por lo tanto tuvimos que resolverlo agregando un tercer parametro a la funcion
+	//donde se reciba el tamaño del arreglo
+	for(int i = 0; i < tamanio; i++){
+		if( arreglo[i] == buscar )
+			return i; //retorna la posicion donde se encontro
+	}
+	//si llego aqui es porque no encontro nada
+	return -1;
 }
 
 
