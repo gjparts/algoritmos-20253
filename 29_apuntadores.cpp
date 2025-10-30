@@ -1,7 +1,7 @@
 /*Apuntadores con string: se recomienda apuntar al Stack,
 porque en C++ no son colecciones grandes.
 Ademas que apuntar string al Stack permite tener acceso
-a sus miembros: length y a sus caracteres,*/
+a sus miembros: length y a sus caracteres.*/
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -22,7 +22,12 @@ void reemplazarEspacios(string &str){
 
 //Haga una funcion void que reciba un string apuntado y que lo altere
 //eliminandole los espacios en blanco.
-
+void eliminarEspacios(string &str){
+	for( int i = 0; i < str.length(); i++ ){
+		if( str[i] == ' ' )
+			str[i] = 0; //el char CERO en c++ es considerado un caracter nulo
+	}
+}
 
 int main(){
 	system("color a"); //no tiene que ver con el tema pero colorea el texto en verde
@@ -34,7 +39,10 @@ int main(){
 	reemplazarEspacios(x);
 	cout << x << endl;
 	
+	string z = "UNAH 2025 SISTEMAS LA MEJOR CARRERA";
+	eliminarEspacios(z);
+	cout << z << endl;
+	
 	return 789;
 }
-
 
