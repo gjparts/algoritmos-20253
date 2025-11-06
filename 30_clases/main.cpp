@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Arbol.h"
+#include "Persona.h"
 using namespace std;
 
 int main(){
@@ -21,5 +22,44 @@ int main(){
 	cout << "Altura: " << ar1->alto << endl;
 	cout << "Ancho: " << ar1->ancho << endl;
 	
+	//instanciar un nuevo objeto de clase Persona
+	Persona *per1 = new Persona();
+	//que pasaria si imprimo per1?
+	cout << per1 << endl;
+	//lo anterior es la direccion en memoria de per1
+	
+	//veamos que hay en los atributos de per1:
+	cout << "per1 -----------------------" << endl;
+	cout << "nombre: " << per1->nombre << endl;
+	cout << "edad: " << per1->edad << endl;
+	cout << "genero: " << per1->genero << endl;
+	
+	//observe que per1 fue construido con Persona() el cual es un constructor sin parametros.
+	//observe que ar1 fue construido con Arbol() tambien un constructor sin parametros; pero en el caso
+	//de Arbol si Usted va a ver la definicion de la clase notará que no programamos ningun constructor.
+	//en C++, Java y C# si uno no programa ningun constructor para una clase; entonces el propio lenguaje
+	//les va a definir un constructor sin parametros que llamará igual que la clase.
+	
+	//Persona tiene dos constructores, voy a usar el constructor con todos los parametros:
+	Persona *per2 = new Persona("Gerardo",43,'M');
+	cout << "per2 -----------------------" << endl;
+	cout << "nombre: " << per2->nombre << endl;
+	cout << "edad: " << per2->edad << endl;
+	cout << "genero: " << per2->genero << endl;
+	
+	Persona *per3 = new Persona("Irene",42);
+	cout << "per3 -----------------------" << endl;
+	cout << "nombre: " << per3->nombre << endl;
+	cout << "edad: " << per3->edad << endl;
+	cout << "genero: " << per3->genero << endl;
+	
 	return 123;
 }
+
+
+
+
+
+
+
+
