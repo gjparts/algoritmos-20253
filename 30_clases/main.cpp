@@ -41,17 +41,21 @@ int main(){
 	//les va a definir un constructor sin parametros que llamará igual que la clase.
 	
 	//Persona tiene dos constructores, voy a usar el constructor con todos los parametros:
-	Persona *per2 = new Persona("Gerardo",43,'M');
+	Persona *per2 = new Persona("Gerardo",65,'M');
 	cout << "per2 -----------------------" << endl;
-	cout << "nombre: " << per2->nombre << endl;
-	cout << "edad: " << per2->edad << endl;
-	cout << "genero: " << per2->genero << endl;
+	per2->imprimir();
 	
 	Persona *per3 = new Persona("Irene",42);
 	cout << "per3 -----------------------" << endl;
-	cout << "nombre: " << per3->nombre << endl;
-	cout << "edad: " << per3->edad << endl;
-	cout << "genero: " << per3->genero << endl;
+	per3->imprimir();
+	per3->saludar(true);
+	per3->saludar(false);
+	
+	cout << per1->terceraEdad() << endl;
+	cout << per2->terceraEdad() << endl;
+	cout << per3->terceraEdad() << endl;
+	
+	
 	
 	return 123;
 }

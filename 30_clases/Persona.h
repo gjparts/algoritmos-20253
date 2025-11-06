@@ -47,6 +47,39 @@ class Persona{
 			this->edad = edad;
 			this->genero = 'X'; //solo genero queda con valor default
 		}
+		
+		//Metodos
+		//un metodo es una funcion que esta definida dentro de una clase.
+		void imprimir(){
+			cout << "************** Persona **************" << endl;
+			cout << "Nombre: " << this->nombre << endl;
+			cout << "Edad: " << this->edad << endl;
+			cout << "Genero: " << this->generoDescripcion() << endl;
+			cout << "Es de la tercera edad? " << ( this->terceraEdad() == true ? "Si" : "No" ) << endl;
+		}
+		
+		//metodo que imprime un saludo en ingles o en español
+		void saludar(bool ingles){
+			if( ingles == true )
+				cout << "Hello my name is " << this->nombre << endl;
+			else	
+				cout << "Hola mi nombre es " << this->nombre << endl;
+		}
+		//metodo que devuelve true si la persona es de la tercera edad
+		bool terceraEdad(){
+			if( edad >= 60 )
+				return true;
+			else
+				return false;
+		}
+		//metodo que devuelve el genero pero como String y mas detallado
+		string generoDescripcion(){
+			if( this->genero == 'M' ) return "Masculino";
+			if( this->genero == 'F' ) return "Femenino";
+			if( this->genero == 'X' ) return "Otros";
+			//en caso de que no se cumpla ninguna de las anteriores:
+			return "No configurado";
+		}
 };
 
 #endif
