@@ -3,6 +3,7 @@
 #include "Persona.h"
 #include "Mascota.h"
 #include "Empleado.h"
+#include "CuentaAhorro.h"
 using namespace std;
 
 int main(){
@@ -75,10 +76,20 @@ int main(){
 	//em1->edad = 99;
 	//ambos casos no se puede porque edad es private, estos solo se pueden
 	//leer o escribir desde dentro de la clase o desde fuera por medio de
-	//sus metodos get y set:
+	//sus metodos get y set:	
 	em1->setEdad(18);
 	cout << "edad de em1: " << em1->getEdad() << endl;
+	em1->imprimir();
 	
+	cout << "------------------------------" << endl;
+	CuentaAhorro *a1 = new CuentaAhorro("Gerardo","7777");
+	cout << "Saldo en a1: " << a1->getSaldo() << endl;
+	a1->depositar(2000);
+	cout << "Saldo en a1: " << a1->getSaldo() << endl;
+	a1->depositar(500);
+	cout << "Saldo en a1: " << a1->getSaldo() << endl;
+	a1->retirar(800);
+	cout << "Saldo en a1: " << a1->getSaldo() << endl;
 	
 	return 123;
 }
